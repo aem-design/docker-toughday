@@ -21,6 +21,6 @@ ENV TEST_HOST="${TEST_HOST}" \
 
 WORKDIR /toughday
 
-COPY *.jar .
+COPY packages/ .
 
 CMD ["java","${TEST_MEM}","-jar","${TEST_JAR}", "-Dhostname=${TEST_HOST}","-Dport=${TEST_PORT}","${*}"]
