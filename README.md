@@ -17,9 +17,9 @@ Following packages that can be used for stress testing are added
 
 | File | Notes  |
 | ---  | ---    |
-| (toughday-6.1.jar)[https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/tough-day/_jcr_content/main-pars/download-section/download-1/file.res/toughday-6.1.jar] |  |
-| (toughday2-0.9.2.jar)[https://repo.adobe.com/nexus/content/repositories/releases/com/adobe/qe/toughday2/0.9.2/toughday2-0.9.2.jar] |  |
-| (toughday2-0.2.1.jar)[https://repo.adobe.com/nexus/content/repositories/releases/com/adobe/qe/toughday2/0.2.1/toughday2-0.2.1.jar] |  |
+| [toughday-6.1.jar](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/tough-day/_jcr_content/main-pars/download-section/download-1/file.res/toughday-6.1.jar) |  |
+| [toughday2-0.9.2.jar](https://repo.adobe.com/nexus/content/repositories/releases/com/adobe/qe/toughday2/0.9.2/toughday2-0.9.2.jar) |  |
+| [toughday2-0.2.1.jar](https://repo.adobe.com/nexus/content/repositories/releases/com/adobe/qe/toughday2/0.2.1/toughday2-0.2.1.jar) |  |
 
 ### Environment Variables
 
