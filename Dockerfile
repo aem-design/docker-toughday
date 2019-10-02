@@ -1,4 +1,4 @@
-FROM        aemdesign/oracle-jdk:1.0-jdk8
+FROM        aemdesign/oracle-jdk:jdk8
 
 MAINTAINER  devops <devops@aem.design>
 
