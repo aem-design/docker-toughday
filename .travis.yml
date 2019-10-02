@@ -13,6 +13,7 @@ cache:
 
 
 before_install:
+  - echo GET CONFIG FROM DOCKERFILE
   - export IMAGE_NAME=$(grep imagename= Dockerfile | sed -e 's/.*imagename="\(.*\)".*/\1/')
   - export TEST_COMMAND=$(grep test.command= Dockerfile | sed -e 's/.*test.command="\(.*\)".*/\1/')
   - export TEST_COMMAND_VERIFY=$(grep test.command.verify= Dockerfile | sed -e 's/.*test.command.verify="\(.*\)".*/\1/')
@@ -22,6 +23,7 @@ before_install:
   - echo IMAGE_VERSION=$IMAGE_VERSION
   - echo TEST_COMMAND=$TEST_COMMAND
   - echo TEST_COMMAND_VERIFY=$TEST_COMMAND_VERIFY
+  - echo GET PACKAGES
   - echo $PACKAGE_PATH
   - if [[ ! -d $PACKAGE_PATH ]]; then mkdir $PACKAGE_PATH; fi
   - echo PACKAGES CONTENTS $PACKAGE_PATH
@@ -31,6 +33,7 @@ before_install:
   - ./scripts/download.sh "$PACKAGE_PATH/" "-" "-" "https://repo.adobe.com/nexus/content/repositories/releases/com/adobe/qe/toughday2/0.9.2/toughday2-0.9.2.jar"
   - ./scripts/download.sh "$PACKAGE_PATH/" "-" "-" "https://repo.adobe.com/nexus/content/repositories/releases/com/adobe/qe/toughday2/0.2.1/toughday2-0.2.1.jar"
   - ls -latr $PACKAGE_PATH
+  - echo GET CONFIG FROM GIT
   - export CURRENT_VERSION=$(git describe --tag --always --long | sed -e 's/\(.*\)-\(.*\)-.*/\1.\2/')
   - declare -a CURRENT_VERSION_ARRAY="(${CURRENT_VERSION//./ })"; export SEMVER_MAJOR=${CURRENT_VERSION_ARRAY[0]}; export SEMVER_MINOR=${CURRENT_VERSION_ARRAY[1]}; export SEMVER_BUILD=${CURRENT_VERSION_ARRAY[-1]}
   - echo SEMVER_MAJOR:${SEMVER_MAJOR}
