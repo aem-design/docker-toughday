@@ -1,13 +1,13 @@
 ## CentOS 7 with toughday
 
-[![build_status](https://travis-ci.org/aem-design/toughday.svg?branch=master)](https://travis-ci.org/aem-design/toughday) 
-[![github license](https://img.shields.io/github/license/aem-design/toughday)](https://github.com/aem-design/toughday) 
-[![github issues](https://img.shields.io/github/issues/aem-design/toughday)](https://github.com/aem-design/toughday) 
-[![github last commit](https://img.shields.io/github/last-commit/aem-design/toughday)](https://github.com/aem-design/toughday) 
-[![github repo size](https://img.shields.io/github/repo-size/aem-design/toughday)](https://github.com/aem-design/toughday) 
+[![build_status](https://travis-ci.org/aem-design/docker-toughday.svg?branch=master)](https://travis-ci.org/aem-design/docker-toughday) 
+[![github license](https://img.shields.io/github/license/aem-design/docker-toughday)](https://github.com/aem-design/docker-toughday) 
+[![github issues](https://img.shields.io/github/issues/aem-design/docker-toughday)](https://github.com/aem-design/docker-toughday) 
+[![github last commit](https://img.shields.io/github/last-commit/aem-design/docker-toughday)](https://github.com/aem-design/docker-toughday) 
+[![github repo size](https://img.shields.io/github/repo-size/aem-design/docker-toughday)](https://github.com/aem-design/docker-toughday) 
 [![docker stars](https://img.shields.io/docker/stars/aemdesign/toughday)](https://hub.docker.com/r/aemdesign/toughday) 
 [![docker pulls](https://img.shields.io/docker/pulls/aemdesign/toughday)](https://hub.docker.com/r/aemdesign/toughday) 
-[![github release](https://img.shields.io/github/release/aem-design/toughday)](https://github.com/aem-design/toughday)
+[![github release](https://img.shields.io/github/release/aem-design/docker-toughday)](https://github.com/aem-design/docker-toughday)
 
 This is docker image based on [aemdesign/oracle-jdk](https://hub.docker.com/r/aemdesign/oracle-jdk/) with toughday added
 
