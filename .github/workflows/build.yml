@@ -11,8 +11,7 @@ jobs:
       ORGANISATION_NAME: aemdesign
       DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
       DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-##      DOCKER_REGISTRY: docker.pkg.github.com
-#
+
     steps:
       - uses: actions/checkout@v1
       - name: set envirnment variables
@@ -21,6 +20,7 @@ jobs:
           echo GET PACKAGES
           export PACKAGE_PATH=$(pwd)/packages
           echo ::set-env name=PACKAGE_PATH::${PACKAGE_PATH}
+
 #          source <(curl -sL https://github.com/aem-design/aemdesign-docker/releases/latest/download/github_get_config.sh)
 #          echo $PACKAGE_PATH
 #          if [[ ! -d $PACKAGE_PATH ]]; then mkdir $PACKAGE_PATH; fi
