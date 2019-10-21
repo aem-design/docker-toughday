@@ -1,4 +1,4 @@
-name: CI
+name: ci
 
 on: [push]
 
@@ -9,6 +9,8 @@ jobs:
     env:
       DOCKER_REGISTRY: docker.io
       ORGANISATION_NAME: aemdesign
+      DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+      DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
 #      DOCKER_REGISTRY: docker.pkg.github.com
 
     steps:
