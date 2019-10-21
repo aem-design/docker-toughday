@@ -21,16 +21,16 @@ jobs:
           export PACKAGE_PATH=$(pwd)/packages
           echo ::set-env name=PACKAGE_PATH::${PACKAGE_PATH}
           source <(curl -sL https://github.com/aem-design/aemdesign-docker/releases/latest/download/github_get_config.sh)
-#          echo $PACKAGE_PATH
-#          if [[ ! -d $PACKAGE_PATH ]]; then mkdir $PACKAGE_PATH; fi
-#          echo PACKAGES CONTENTS $PACKAGE_PATH
-#          ls -latr $PACKAGE_PATH
-#          echo DOWNLOAD PACKAGES INTO ${PACKAGE_PATH}
-#          ./scripts/download.sh "$PACKAGE_PATH/" "-" "-" "https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/tough-day/_jcr_content/main-pars/download-section/download-1/file.res/toughday-6.1.jar"
-#          ./scripts/download.sh "$PACKAGE_PATH/" "-" "-" "https://repo.adobe.com/nexus/content/repositories/releases/com/adobe/qe/toughday2/0.9.2/toughday2-0.9.2.jar"
-#          ./scripts/download.sh "$PACKAGE_PATH/" "-" "-" "https://repo.adobe.com/nexus/content/repositories/releases/com/adobe/qe/toughday2/0.2.1/toughday2-0.2.1.jar"
-#          ls -latr $PACKAGE_PATH
-#          source <(curl -sL https://github.com/aem-design/aemdesign-docker/releases/latest/download/github_get_version.sh)
+          echo $PACKAGE_PATH
+          if [[ ! -d $PACKAGE_PATH ]]; then mkdir $PACKAGE_PATH; fi
+          echo PACKAGES CONTENTS $PACKAGE_PATH
+          ls -latr $PACKAGE_PATH
+          echo DOWNLOAD PACKAGES INTO ${PACKAGE_PATH}
+          ./scripts/download.sh "$PACKAGE_PATH/" "-" "-" "https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/tough-day/_jcr_content/main-pars/download-section/download-1/file.res/toughday-6.1.jar"
+          ./scripts/download.sh "$PACKAGE_PATH/" "-" "-" "https://repo.adobe.com/nexus/content/repositories/releases/com/adobe/qe/toughday2/0.9.2/toughday2-0.9.2.jar"
+          ./scripts/download.sh "$PACKAGE_PATH/" "-" "-" "https://repo.adobe.com/nexus/content/repositories/releases/com/adobe/qe/toughday2/0.2.1/toughday2-0.2.1.jar"
+          ls -latr $PACKAGE_PATH
+          source <(curl -sL https://github.com/aem-design/aemdesign-docker/releases/latest/download/github_get_version.sh)
 #      - name: build and test docker image
 #        run: |
 #          docker build --pull -t $IMAGE:$IMAGE_VERSION .
