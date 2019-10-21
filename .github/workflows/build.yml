@@ -18,45 +18,45 @@ jobs:
       - name: set envirnment variables
         id: config
         run: |
-          source <(curl -sL https://github.com/aem-design/aemdesign-docker/releases/latest/download/github_get_config.sh)
+#          source <(curl -sL https://github.com/aem-design/aemdesign-docker/releases/latest/download/github_get_config.sh)
           echo GET PACKAGES
           export PACKAGE_PATH=$(pwd)/packages
           echo ::set-env name=PACKAGE_PATH::${PACKAGE_PATH}
-          echo $PACKAGE_PATH
-          if [[ ! -d $PACKAGE_PATH ]]; then mkdir $PACKAGE_PATH; fi
-          echo PACKAGES CONTENTS $PACKAGE_PATH
-          ls -latr $PACKAGE_PATH
-          echo DOWNLOAD PACKAGES INTO ${PACKAGE_PATH}
-          ./scripts/download.sh "$PACKAGE_PATH/" "-" "-" "https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/tough-day/_jcr_content/main-pars/download-section/download-1/file.res/toughday-6.1.jar"
-          ./scripts/download.sh "$PACKAGE_PATH/" "-" "-" "https://repo.adobe.com/nexus/content/repositories/releases/com/adobe/qe/toughday2/0.9.2/toughday2-0.9.2.jar"
-          ./scripts/download.sh "$PACKAGE_PATH/" "-" "-" "https://repo.adobe.com/nexus/content/repositories/releases/com/adobe/qe/toughday2/0.2.1/toughday2-0.2.1.jar"
-          ls -latr $PACKAGE_PATH
-          source <(curl -sL https://github.com/aem-design/aemdesign-docker/releases/latest/download/github_get_version.sh)
-      - name: build and test docker image
-        run: |
-          docker build --pull -t $IMAGE:$IMAGE_VERSION .
-          source <(curl -sL https://github.com/aem-design/aemdesign-docker/releases/latest/download/container_verify.sh)
-          (cd test && ./run_tests.sh "$IMAGE:$IMAGE_VERSION")
-          docker images
-      - name: login to docker registry
-        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login ${DOCKER_REGISTRY} -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-      - name: push image version
-        run: docker push $IMAGE:$IMAGE_VERSION
-
-      - name: push latest image on master
-        if: github.ref == 'refs/heads/master'
-        run: |
-          docker tag $IMAGE:$IMAGE_VERSION $IMAGE:latest
-          docker push $IMAGE:latest
-
-      - name: update registry description with readme on master
-        if: github.ref == 'refs/heads/master'
-        run: |
-          docker run --rm -v $(pwd):/data/ aemdesign/dockerhub-description "$DOCKER_USERNAME" "$DOCKER_PASSWORD" "$IMAGE"
-
-      - uses: meeDamian/github-release@1.0
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          tag: ${{ steps.config.env.CURRENT_VERSION }}
-          name: ${{ steps.config.env.CURRENT_VERSION }}
-          body: ${{ steps.config.env.GIT_RELEASE_NOTES }}
+#          echo $PACKAGE_PATH
+#          if [[ ! -d $PACKAGE_PATH ]]; then mkdir $PACKAGE_PATH; fi
+#          echo PACKAGES CONTENTS $PACKAGE_PATH
+#          ls -latr $PACKAGE_PATH
+#          echo DOWNLOAD PACKAGES INTO ${PACKAGE_PATH}
+#          ./scripts/download.sh "$PACKAGE_PATH/" "-" "-" "https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/tough-day/_jcr_content/main-pars/download-section/download-1/file.res/toughday-6.1.jar"
+#          ./scripts/download.sh "$PACKAGE_PATH/" "-" "-" "https://repo.adobe.com/nexus/content/repositories/releases/com/adobe/qe/toughday2/0.9.2/toughday2-0.9.2.jar"
+#          ./scripts/download.sh "$PACKAGE_PATH/" "-" "-" "https://repo.adobe.com/nexus/content/repositories/releases/com/adobe/qe/toughday2/0.2.1/toughday2-0.2.1.jar"
+#          ls -latr $PACKAGE_PATH
+#          source <(curl -sL https://github.com/aem-design/aemdesign-docker/releases/latest/download/github_get_version.sh)
+#      - name: build and test docker image
+#        run: |
+#          docker build --pull -t $IMAGE:$IMAGE_VERSION .
+#          source <(curl -sL https://github.com/aem-design/aemdesign-docker/releases/latest/download/container_verify.sh)
+#          (cd test && ./run_tests.sh "$IMAGE:$IMAGE_VERSION")
+#          docker images
+#      - name: login to docker registry
+#        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login ${DOCKER_REGISTRY} -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+#      - name: push image version
+#        run: docker push $IMAGE:$IMAGE_VERSION
+#
+#      - name: push latest image on master
+#        if: github.ref == 'refs/heads/master'
+#        run: |
+#          docker tag $IMAGE:$IMAGE_VERSION $IMAGE:latest
+#          docker push $IMAGE:latest
+#
+#      - name: update registry description with readme on master
+#        if: github.ref == 'refs/heads/master'
+#        run: |
+#          docker run --rm -v $(pwd):/data/ aemdesign/dockerhub-description "$DOCKER_USERNAME" "$DOCKER_PASSWORD" "$IMAGE"
+#
+#      - uses: meeDamian/github-release@1.0
+#        with:
+#          token: ${{ secrets.GITHUB_TOKEN }}
+#          tag: ${{ steps.config.env.CURRENT_VERSION }}
+#          name: ${{ steps.config.env.CURRENT_VERSION }}
+#          body: ${{ steps.config.env.GIT_RELEASE_NOTES }}
