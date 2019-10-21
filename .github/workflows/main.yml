@@ -1,4 +1,5 @@
 name: ci
+description: build and push to hub.docker
 
 on: [push]
 
