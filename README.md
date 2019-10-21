@@ -1,6 +1,6 @@
 ## CentOS 7 with toughday
 
-[![build_status](https://github.com/aem-design/docker-docker-toughday/workflows/ci/badge.svg)](https://github.com/aem-design/docker-docker-toughday/actions?workflow=ci)
+[![build_status](https://github.com/aem-design/docker-toughday/workflows/ci/badge.svg)](https://github.com/aem-design/docker-toughday/actions?workflow=ci)
 [![github license](https://img.shields.io/github/license/aem-design/docker-toughday)](https://github.com/aem-design/docker-toughday) 
 [![github issues](https://img.shields.io/github/issues/aem-design/docker-toughday)](https://github.com/aem-design/docker-toughday) 
 [![github last commit](https://img.shields.io/github/last-commit/aem-design/docker-toughday)](https://github.com/aem-design/docker-toughday) 
