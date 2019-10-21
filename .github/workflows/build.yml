@@ -20,8 +20,7 @@ jobs:
           echo GET PACKAGES
           export PACKAGE_PATH=$(pwd)/packages
           echo ::set-env name=PACKAGE_PATH::${PACKAGE_PATH}
-
-#          source <(curl -sL https://github.com/aem-design/aemdesign-docker/releases/latest/download/github_get_config.sh)
+          source <(curl -sL https://github.com/aem-design/aemdesign-docker/releases/latest/download/github_get_config.sh)
 #          echo $PACKAGE_PATH
 #          if [[ ! -d $PACKAGE_PATH ]]; then mkdir $PACKAGE_PATH; fi
 #          echo PACKAGES CONTENTS $PACKAGE_PATH
