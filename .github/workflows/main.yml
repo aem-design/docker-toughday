@@ -56,14 +56,7 @@ jobs:
       - uses: meeDamian/github-release@1.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          tag: ${CURRENT_VERSION}
-          name: ${CURRENT_VERSION}
-          body: $GIT_RELEASE_NOTES
-          gzip: folders
-          files: >
-            Dockerfile
-            test/
-            README.md
-            LICENSE
-            scripts/
+          tag: ${{ jobs.build.env.CURRENT_VERSION }}
+          name: ${{ jobs.build.env.CURRENT_VERSION }}
+          body: ${{ jobs.build.env.GIT_RELEASE_NOTES }}
 
