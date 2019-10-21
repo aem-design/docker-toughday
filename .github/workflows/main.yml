@@ -16,6 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: set envirnment variables
+        id: config
         run: |
           source <(curl -sL https://github.com/aem-design/aemdesign-docker/releases/latest/download/github_get_config.sh)
           echo GET PACKAGES
@@ -56,7 +57,6 @@ jobs:
       - uses: meeDamian/github-release@1.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          tag: ${{ jobs.build.env.CURRENT_VERSION }}
-          name: ${{ jobs.build.env.CURRENT_VERSION }}
-          body: ${{ jobs.build.env.GIT_RELEASE_NOTES }}
-
+          tag: ${{ steps.config.env.CURRENT_VERSION }}
+          name: ${{ steps.config.env.CURRENT_VERSION }}
+          body: ${{ steps.config.env.GIT_RELEASE_NOTES }}
