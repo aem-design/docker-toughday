@@ -58,6 +58,11 @@ jobs:
       - name: Dump config step env
         env:
           CONFIG_ENV: ${{ toJson(steps.config.env) }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          tag: ${{ steps.config.env.GITHUB_TAG }}
+          name: ${{ steps.config.env.GITHUB_TAG }}
+          name2: ${{ job.env.GITHUB_TAG }}
+          body: ${{ steps.config.env.GIT_RELEASE_NOTES }}
         run: echo "$CONFIG_ENV"
         
 #      - name: build and test docker image
