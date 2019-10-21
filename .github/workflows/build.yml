@@ -62,6 +62,7 @@ jobs:
           tag: ${{ steps.config.env.GITHUB_TAG }}
           name: ${{ steps.config.env.GITHUB_TAG }}
           name2: ${{ job.env.GITHUB_TAG }}
+          name3: ${{ env.GITHUB_TAG }}
           body: ${{ steps.config.env.GIT_RELEASE_NOTES }}
         run: echo "$CONFIG_ENV"
         
