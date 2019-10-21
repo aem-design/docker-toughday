@@ -52,10 +52,10 @@ jobs:
         if: github.ref == 'refs/heads/master'
         run: |
           docker run --rm -v $(pwd):/data/ aemdesign/dockerhub-description "$DOCKER_USERNAME" "$DOCKER_PASSWORD" "$IMAGE"
-#
-#      - uses: meeDamian/github-release@1.0
-#        with:
-#          token: ${{ secrets.GITHUB_TOKEN }}
-#          tag: ${{ steps.config.env.CURRENT_VERSION }}
-#          name: ${{ steps.config.env.CURRENT_VERSION }}
-#          body: ${{ steps.config.env.GIT_RELEASE_NOTES }}
+
+      - uses: meeDamian/github-release@1.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          tag: ${{ steps.config.env.CURRENT_VERSION }}
+          name: ${{ steps.config.env.CURRENT_VERSION }}
+          body: ${{ steps.config.env.GIT_RELEASE_NOTES }}
