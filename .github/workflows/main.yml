@@ -13,8 +13,8 @@ jobs:
 #      DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
 ##      DOCKER_REGISTRY: docker.pkg.github.com
 #
-#    steps:
-#      - uses: actions/checkout@v1
+    steps:
+      - uses: actions/checkout@v1
 #      - name: set envirnment variables
 #        id: config
 #        run: |
