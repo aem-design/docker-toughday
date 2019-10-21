@@ -99,7 +99,7 @@ test_docker_run_usage() {
 
 	printLine "Starting Container"
 
-	OUTPUT=$(docker run -it --rm ${IMAGE_NAME} java -jar toughday-6.1.jar)
+	OUTPUT=$(docker run --rm ${IMAGE_NAME} java -jar toughday-6.1.jar)
 
 	if [[ "$OUTPUT" != *"$CHECK"* ]]; then
 	    printResult "error"
