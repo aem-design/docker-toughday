@@ -59,6 +59,7 @@ jobs:
         env:
           CONFIG_ENV: ${{ toJson(steps.config.env) }}
         run: echo "$CONFIG_ENV"
+        
 #      - name: build and test docker image
 #        run: |
 #          docker build --pull -t $IMAGE:$IMAGE_VERSION .
