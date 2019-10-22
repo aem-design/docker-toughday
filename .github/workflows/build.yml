@@ -59,8 +59,10 @@ jobs:
       - name: Dump config step env
         env:
           CONFIG_ENV: ${{ toJson(steps.config.outputs) }}
-          GITHUB_TAG: ${{ steps.config.outputs.GITHUB_TAG }}
-        run: echo "$CONFIG_ENV"
+          XXX: ${{ steps.config.outputs.GITHUB_TAG }}
+        run: |
+          echo "$CONFIG_ENV"
+          echo "$XXX"
 
       - uses: meeDamian/github-release@1.0
         with:
