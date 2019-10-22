@@ -56,6 +56,12 @@ jobs:
         run: |
           docker run --rm -v $(pwd):/data/ aemdesign/dockerhub-description "$DOCKER_USERNAME" "$DOCKER_PASSWORD" "$IMAGE"
 
+      - name: Dump config step env
+        env:
+          CONFIG_ENV: ${{ toJson(steps.config.outputs) }}
+          GITHUB_TAG: ${{ steps.config.outputs.GITHUB_TAG }}
+        run: echo "$CONFIG_ENV"
+
       - uses: meeDamian/github-release@1.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
